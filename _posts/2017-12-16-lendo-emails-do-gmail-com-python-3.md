@@ -131,7 +131,8 @@ O arquivo completo deste post você encontra no [meu Github][].
 E você, já precisou conectar no servidor de e-mail com Python? Gostaria de acrescentar, corrigir ou sugerir algo?
 Comente a vontade!
 
-Este post foi baseado por este [How to Read Email From Gmail Using Python][].
+Este post foi baseado neste [How to Read Email From Gmail Using Python][].
+
 Gde. abraço!
 
 Ed
