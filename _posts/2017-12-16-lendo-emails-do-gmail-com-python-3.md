@@ -2,7 +2,7 @@
 layout: post
 title: "Lendo e-mails do Gmail com Python 3"
 description: "Usando Python para conectar no Gmail, extrair uma informação específica do corpo e adicionar um label"
-category: ColdFusion/CFML
+category: Python
 tags: [Python]
 comments: true
 ---
@@ -18,6 +18,12 @@ texto, até aqui, o próprio Gmail resolvia, mas, eu ainda precisava extrair
 3 informações específicas do corpo de cada um destes e-mails e após isto, atribuir um label específico para facilitar futuras buscas.
 
 #### Mão na massa
+Utilizamos o módulo `imaplib` para conectar no Gmail via SSL e o módulo `email` para fazer o parser do e-mail.
+```python
+import imaplib
+import email
+```
+
 Primeiro configuramos as constantes com os dados de acesso a conta. Para leitura do Gmail, utilizamos o servidor  imap.gmail.com.
 Caso você utilize autenticação em 2 etapas, configure uma [“senha de app” no Gmail][] e utilize-a na constante `FROM_PWD`, caso contrário, terá falhas na autenticação.
 ```python
@@ -25,13 +31,6 @@ FROM_EMAIL = "<seuemail>@gmail.com"  # substitua <seuemail> pelo seu email.
 FROM_PWD = "<suasenha>"  # substitua <suasenha> pela sua senha
 SMTP_SERVER = "imap.gmail.com"  # padrão
 SMTP_PORT = 993  # padrão
-```
-
-
-Utilizamos o módulo `imaplib` para conectar no Gmail via SSL e o módulo `email` para fazer o parser do e-mail.
-```python
-import imaplib
-import email
 ```
 
 
@@ -116,7 +115,7 @@ print('SQL: \n' + sql_str + '\n')
 
 E por fim, adicionamos um label ao e-mail que acabamos de iterar usando `mail.store`.
 ```python
-labeled = mail.store(str.encode(str(i)), '+X-GM-LABELS', ’seu_label')
+labeled = mail.store(str.encode(str(i)), '+X-GM-LABELS', 'seu_label')
 ```
 Caso queira remover o label, substitua o sinal ‘+’ por ‘-‘.`
 
@@ -127,9 +126,12 @@ mail.logout()
 
 É isto.
 
+O arquivo completo deste post você encontra no [meu Github][].
+
 E você, já precisou conectar no servidor de e-mail com Python? Gostaria de acrescentar, corrigir ou sugerir algo?
 Comente a vontade!
 
+Este post foi baseado por este [How to Read Email From Gmail Using Python][].
 Gde. abraço!
 
 Ed
@@ -141,9 +143,12 @@ Ed
 * [“senha de app” no Gmail][]
 * [RFC 2060][]
 * [Beautiful Soup][]
-
+* [How to Read Email From Gmail Using Python]
+* [meu Github][]
 
 
 [“senha de app” no Gmail]: https://support.google.com/accounts/answer/185833?hl=pt-BR
 [RFC 2060]: https://tools.ietf.org/html/rfc2060.html#section-6.4.4
 [Beautiful Soup]: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+[How to Read Email From Gmail Using Python]: https://codehandbook.org/how-to-read-email-from-gmail-using-python/
+[meu Github]: https://github.com/edmilton/python-examples/blob/master/mail_reader/reader.py
