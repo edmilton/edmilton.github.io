@@ -153,3 +153,7 @@ Ed
 [Beautiful Soup]: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
 [How to Read Email From Gmail Using Python]: https://codehandbook.org/how-to-read-email-from-gmail-using-python/
 [meu Github]: https://github.com/edmilton/python-examples/blob/master/mail_reader/reader.py
+
+
+{% include disqus.html %}
+{% include analytics.html %}
