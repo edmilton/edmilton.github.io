@@ -9,13 +9,15 @@ comments: true
 Boas Pessoal!
 
 
-Nesta semana tive uma necessidade inusitada e resolvi usar o Python para
-me ajudar a resolver este problema.
+Nesta semana tive uma necessidade inusitada: precisava ler 1000 e-mails e pegar
+informações específicas em cada um. Como não estava afim de perder um dia
+inteiro nisso, resolvi usar o Python para me ajudar a resolver este problema.
 
 #### O contexto
 Precisava ler dentre 1000 e-mails do Gmail, quais tinham um determinado
 texto, até aqui, o próprio Gmail resolvia, mas, eu ainda precisava extrair
-3 informações específicas do corpo de cada um destes e-mails e após isto, atribuir um label específico para facilitar futuras buscas.
+3 informações específicas do corpo de cada um destes e-mails e após isto,
+atribuir um label específico para facilitar futuras buscas.
 
 #### Mão na massa
 Utilizamos o módulo `imaplib` para conectar no Gmail via SSL e o módulo `email` para fazer o parser do e-mail.
