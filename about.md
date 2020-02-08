@@ -11,3 +11,4 @@ Você encontra mais algumas informações em:
 * [LinkedIn](https://www.linkedin.com/in/edmilton/)
 * [Twitter](https://twitter.com/ed_neves)
 * [GitHub](https://github.com/edmilton)
+* [Medium](https://medium.com/@edmilton)
